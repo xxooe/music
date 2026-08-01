@@ -4384,7 +4384,7 @@
           ev.stopPropagation();
           openAddToPlaylistPicker(addBtn, track);
         });
-        // act.appendChild(pBtn);
+        act.appendChild(pBtn);
         act.appendChild(fBtn);
         if(activeTab==='favorites') act.appendChild(addBtn);
         if(activeTab==='playlists') act.appendChild(removeBtn);
@@ -4392,11 +4392,6 @@
         item.addEventListener('click',()=>pBtn.click());
         wrap.appendChild(item);
       });
-
-      // Do not auto-scroll the right playlist after every re-render.
-      // Re-rendering can happen when favoriting/unfavoriting a track; forcing
-      // the active track into view at that moment may push the playlist header
-      // and controls out of the visible area in some layouts.
     }
 
     // ===================== 歌单弹窗 =====================
