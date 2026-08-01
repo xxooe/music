@@ -21,7 +21,7 @@
 
     // ---- 广告位 2：屏幕正中间弹窗广告 (popup) ----
     popup: {
-      enabled: true, // 是否开启弹窗广告
+      enabled: false, // 是否开启弹窗广告
       type: 'image', // 可选类型: 'image' 或 'custom'
       
       // 【新增功能】：弹窗频率限制（单位：小时）。
