@@ -4356,22 +4356,22 @@
         removeBtn.innerHTML=iconHTML('close');
         removeBtn.title=t('removeFromPlaylist');
 
-        // pBtn.addEventListener('click',ev=>{
-        //   ev.stopPropagation();
-        //   if(activeTab==='results'){
-        //     const visible=getInterleavedSearchList();
-        //     const i=visible.findIndex(x=>x.uid===track.uid);
-        //     playFromList('results',i);
-        //   }else if(activeTab==='favorites'){
-        //     const i=state.favorites.findIndex(x=>x.uid===track.uid);
-        //     playFromList('favorites',i);
-        //   }else{
-        //     const plId=dom.playlistSelect.value;
-        //     const pl=state.playlists.find(p=>p.id===plId);
-        //     const i=pl?pl.tracks.findIndex(x=>x.uid===track.uid):-1;
-        //     playFromList('playlist',i,plId);
-        //   }
-        // });
+        pBtn.addEventListener('click',ev=>{
+          ev.stopPropagation();
+          if(activeTab==='results'){
+            const visible=getInterleavedSearchList();
+            const i=visible.findIndex(x=>x.uid===track.uid);
+            playFromList('results',i);
+          }else if(activeTab==='favorites'){
+            const i=state.favorites.findIndex(x=>x.uid===track.uid);
+            playFromList('favorites',i);
+          }else{
+            const plId=dom.playlistSelect.value;
+            const pl=state.playlists.find(p=>p.id===plId);
+            const i=pl?pl.tracks.findIndex(x=>x.uid===track.uid):-1;
+            playFromList('playlist',i,plId);
+          }
+        });
         fBtn.addEventListener('click',ev=>{
           ev.stopPropagation();
           toggleFavoriteTrack(track);
@@ -4384,7 +4384,7 @@
           ev.stopPropagation();
           openAddToPlaylistPicker(addBtn, track);
         });
-        act.appendChild(pBtn);
+        // act.appendChild(pBtn);
         act.appendChild(fBtn);
         if(activeTab==='favorites') act.appendChild(addBtn);
         if(activeTab==='playlists') act.appendChild(removeBtn);
